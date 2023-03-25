@@ -59,7 +59,7 @@ public class Operacion {
     }
     
     public int multiplicar(){
-        if(numA == 0 || numB == 0){
+        if(this.numA == 0 || this.numB == 0){
             System.out.println("-------------------------------------");
             System.out.println("No se puede multiplicar por 0");
             System.out.println("-------------------------------------");
@@ -69,10 +69,10 @@ public class Operacion {
     }
     
     public int division(){
-        if(numA == 0 || numB == 0){
+        if(this.numA == 0 || this.numB == 0){
             return 0;
         }
-        return numA / numB;
+        return this.numA / this.numB;
     }
     
     public void mensajeError(){
