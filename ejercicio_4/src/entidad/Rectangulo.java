@@ -41,14 +41,21 @@ public class Rectangulo {
         return (this.base + this.altura) * 2;
     }
     public void dibujarRectangulo(){
-        int base = this.base;
-        int altura = this.altura;
-        for (int i = 0; i < altura; i++) {
+        System.out.println("-------------------------");
+        for (int i = 0; i < this.altura; i++) {
             System.out.println("");
-            for (int j = 0; j < base; j++) {
-                System.out.print("*");
+            for (int j = 0; j < this.base; j++) {
+                if(i==0 || i==this.altura - 1){
+                    System.out.print("*");
+                }else if(j==0 || j==this.base - 1){
+                    System.out.print("*");
+                }else {
+                    System.out.print(" ");
+                }
             }
         }
+        System.out.println("");
+        System.out.println("-------------------------");
     }
     public void mensajeError(){
         System.out.println("------------------------------------------------");
