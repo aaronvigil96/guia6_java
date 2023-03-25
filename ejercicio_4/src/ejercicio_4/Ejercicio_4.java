@@ -65,5 +65,4 @@ public class Ejercicio_4 {
         }while(opcion != 0);
         System.out.println("Gracias por utilizar el sistema");
     }
-    
 }

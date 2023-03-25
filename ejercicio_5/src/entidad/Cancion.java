@@ -12,11 +12,11 @@ public class Cancion {
     private String autor;
     
     //Constructores
-    Cancion(){
+    public Cancion(){
         this.titulo = "";
         this.autor = "";
     }
-    Cancion(String titulo, String autor){
+    public Cancion(String titulo, String autor){
         this.titulo = titulo;
         this.autor = autor;
     }
@@ -33,5 +33,19 @@ public class Cancion {
     }
     public void setTitulo(String titulo){
         this.titulo = titulo;
+    }
+    public void crearCancion(String titulo, String autor){
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+    public void mostrarCancion(){
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("El titulo de la canción es " + this.titulo + " y el auto es " + this.autor);
+        System.out.println("-------------------------------------------------------------------------");
+    }
+    public void mensajeError(){
+        System.out.println("--------------------------");
+        System.out.println("Debe ingresar una cancion");
+        System.out.println("--------------------------");
     }
 }
