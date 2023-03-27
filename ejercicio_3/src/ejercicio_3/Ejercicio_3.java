@@ -67,7 +67,7 @@ public class Ejercicio_3 {
                 }
                 case 5: {
                     if(numeros){
-                        if(operacion.division() == 0){
+                        if(operacion.division() == 0.0){
                             System.out.println("-------------------------------------");
                             System.out.println("No se puede dividir por 0");
                             System.out.println("-------------------------------------");

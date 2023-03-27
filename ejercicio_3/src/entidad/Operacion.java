@@ -28,11 +28,11 @@ public class Operacion {
     }
     
     public int getNumA(){
-        return this.numA;
+        return numA;
     }
     
     public int getNumB(){
-        return this.numB;
+        return numB;
     }
     
     public void setNumA(int numA){
@@ -45,21 +45,21 @@ public class Operacion {
     
     public void crearOperacion(){
         System.out.println("Ingresá el primer numero");
-        this.numA = entrada.nextInt();
+        numA = entrada.nextInt();
         System.out.println("Ingresá el segundo numero");
-        this.numB = entrada.nextInt();
+        numB = entrada.nextInt();
     }
     
     public int sumar(){
-        return this.numA + numB;
+        return numA + numB;
     }
     
     public int restar(){
-        return this.numA - this.numB;
+        return numA - numB;
     }
     
     public int multiplicar(){
-        if(this.numA == 0 || this.numB == 0){
+        if(numA == 0 || numB == 0){
             System.out.println("-------------------------------------");
             System.out.println("No se puede multiplicar por 0");
             System.out.println("-------------------------------------");
@@ -68,11 +68,14 @@ public class Operacion {
         return numA * numB;
     }
     
-    public int division(){
-        if(this.numA == 0 || this.numB == 0){
-            return 0;
+    public float division(){
+        float resultado;
+        if(numA == 0 || numB == 0){
+            resultado = 0;
+        }else {
+            resultado = (float) numA / (float) numB;
         }
-        return this.numA / this.numB;
+        return resultado;
     }
     
     public void mensajeError(){
