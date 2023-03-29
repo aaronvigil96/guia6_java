@@ -62,7 +62,7 @@ public class Juego {
             }
         }while(this.intentos > 0);
         if(gano){
-            return "Felicitaciones el " + jugador2 + ", ganó";
+            return "Felicitaciones el jugador " + jugador2 + ", ganó";
         }else {
             return "El jugador " + jugador2 + ", perdió";
         }

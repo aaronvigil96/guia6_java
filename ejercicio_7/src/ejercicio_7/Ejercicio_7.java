@@ -24,7 +24,7 @@ public class Ejercicio_7 {
                     juego.setNumero(entrada.nextInt());
                     System.out.println("Ingresá el numero de intentos permitidos");
                     juego.setIntentos(entrada.nextInt());
-                    juego.iniciar_juego();
+                    System.out.println(juego.iniciar_juego());
                     break;
                 }
                 case 0: {
