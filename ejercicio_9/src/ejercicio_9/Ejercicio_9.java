@@ -1,12 +1,12 @@
 package ejercicio_9;
 import java.util.Scanner;
-import ejercicio_9.Cuenta;
 
 public class Ejercicio_9 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         Cuenta cuenta = new Cuenta();
-        int opcion, subopcion;
+        int opcion, subopcion, opcionBoolean;
+        boolean estado = true;
         
         do{
             System.out.println("¿Que desea hacer?");
@@ -141,6 +141,13 @@ public class Ejercicio_9 {
                     break;
                 }
                 case 0: {
+                    System.out.println("¿Estás seguro que querés salir?");
+                    System.out.println("1)- Si");
+                    System.out.println("2)- No");
+                    opcionBoolean = entrada.nextInt();
+                    if(opcionBoolean == 1){
+                        estado = false;
+                    }
                     break;
                 }
                 default: {
@@ -150,8 +157,7 @@ public class Ejercicio_9 {
                     break;
                 }
             }
-        }while(opcion != 0);
+        }while(estado != false);
         System.out.println("Gracias por utilizar la aplicación");
     }
-    
 }
