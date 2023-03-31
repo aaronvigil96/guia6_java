@@ -19,45 +19,37 @@ public class Menu {
     }
     
     //Método
-    public void mostrarMenu(){
-        System.out.println("¿Que desea hacer?");
-        System.out.println("1)- Crear empleado");
-        System.out.println("2)- Mostrar empleado");
-        System.out.println("3)- Calcular aumento");
-        System.out.println("0)- Salir");
-        this.opcion = entrada.nextInt();
-    }
-    
-    public void opcionMenu(){
-        switch(this.opcion){
-            case 1:{
-                crearEmpleado();
+    public void menu(){
+        do{
+            System.out.println("¿Que desea hacer?");
+            System.out.println("1)- Crear empleado");
+            System.out.println("2)- Mostrar empleado");
+            System.out.println("3)- Calcular aumento");
+            System.out.println("0)- Salir");
+            this.opcion = entrada.nextInt();
+            switch(this.opcion){
+                case 1:{
+                    crearEmpleado();
+                    break;
+                }
+                case 2:{
+                    mostrarEmpleado();
+                    break;
+                }
+                case 3:{
+                    mostrarAumento();
+                    break;
+                }
+                case 0:{
+                    salirMenu();
+                    break;
+                }
+                default: {
+                    System.out.println("Debe ingresar una opción correcta");
+                    break;
+                }
             }
-            case 2:{
-                
-            }
-            case 3:{
-                
-            }
-            case 0:{
-                break;
-            }
-            default: {
-                System.out.println("Debe ingresar una opción correcta");
-                break;
-            }
-        }
-        if(this.opcion != 0){
-            mostrarMenu();
-        }else {
-            System.out.println("¿Está seguro que desea salir?");
-            System.out.println("1)- Si");
-            System.out.println("2)- No");
-            opcion = entrada.nextInt();
-            if(this.opcion == 2){
-                mostrarMenu();
-            }
-        }
+        }while(this.opcion != 0);
         System.out.println("--------------------------------");
         System.out.println("Gracias por utilizar el programa");
         System.out.println("--------------------------------");
@@ -76,5 +68,48 @@ public class Menu {
         System.out.println("Empleado creado con éxito");
         System.out.println("-------------------------");
         System.out.println("");
+        empleado.setEmpleado(true);
+    }
+    
+    public void mostrarEmpleado(){
+        if(empleado.getEmpleado()){
+            System.out.println("");
+            System.out.println("-----------------------------------------------------------------------");
+            System.out.println("El empleado se llama: " + empleado.getNombre() + " tiene " + empleado.getEdad() + " años y tiene " + empleado.getSalario() + "$.");
+            System.out.println("-----------------------------------------------------------------------");
+            System.out.println("");
+        }else {
+            System.out.println("");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("Debe ingresar un empleado");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("");
+        }
+    }
+    
+    public void mostrarAumento(){
+        if(empleado.getEmpleado()){
+            System.out.println("");
+            System.out.println("------------------------------------------------------");
+            System.out.println("El aumento para " + empleado.getNombre() + " es de: " + empleado.calcular_aumento() + "$");
+            System.out.println("------------------------------------------------------");
+            System.out.println("");
+        }else {
+            System.out.println("");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("Debe ingresar un empleado");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("");
+        }
+    }
+    
+    public void salirMenu(){
+        System.out.println("¿Seguro que quiere salir?");
+        System.out.println("1)- Si");
+        System.out.println("2)- No");
+        this.opcion = entrada.nextInt();
+        if(opcion == 1){
+            this.opcion = 0;
+        }
     }
 }

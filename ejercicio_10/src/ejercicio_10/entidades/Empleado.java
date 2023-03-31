@@ -12,6 +12,7 @@ public class Empleado {
     private int edad;
     private int salario;
     private double aumento;
+    private boolean empleado;
     
     //Constructores
     Empleado(){
@@ -21,6 +22,7 @@ public class Empleado {
         this.nombre = nombre;
         this.edad = edad;
         this.salario = salario;
+        this.empleado = true;
     }
     
     //Métodos
@@ -33,6 +35,9 @@ public class Empleado {
     public int getSalario() {
         return salario;
     }
+    public boolean getEmpleado(){
+        return empleado;
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -41,6 +46,9 @@ public class Empleado {
     }
     public void setSalario(int salario) {
         this.salario = salario;
+    }
+    public void setEmpleado(boolean estado){
+        this.empleado = estado;
     }
     public double calcular_aumento(){
         if(this.edad > 30){
